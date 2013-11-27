@@ -1,0 +1,29 @@
+name: AssignGroup for Movable Type
+id: AssignGroup
+author_link: http://www.movabletips.com/
+author_name: Maarten Schenk
+description: This plugin will assign an author to a group if certain custom fields are filled or add all new authors to a configurable group.
+plugin_link: http://www.movabletips.com/
+doc_link: http://www.movabletips.com/
+version: 1.0
+callbacks:
+	MT::Author::pre_save: $AssignGroup::AssignGroup::Plugin::author_post_save
+    
+settings:
+	defaultgroups:
+		scope: system  
+	group:
+		scope: system
+	fields:
+		scope: system
+	logging:
+	  scope: system
+	  default: 1
+
+system_config_template: system_config.tmpl
+
+tasks:
+  add_to_default_groups:
+    label:     "Add all authors to the default groups"
+    frequency: 86400
+    code:      $AssignGroup::AssignGroup::Plugin::add_to_default_groups

@@ -1,0 +1,35 @@
+<mtapp:setting
+  id="group"
+  label="Group"
+  hint="Name of the group authors will automatically become a member of if they have a value set in the custom fields specified below."
+  show_hint="1">
+    <input type="text" name="group" id="group" 
+       value="<mt:var name="group">" />
+</mtapp:setting>
+
+<mtapp:setting
+  id="fields"
+  label="Fields"
+  hint="Basenames of the custom fields of the author that must have a value for the author to become member of the group "
+  show_hint="1">
+    <input type="text" columns="50" name="fields" id="fields" 
+       value="<mt:var name="fields">" />
+</mtapp:setting>
+
+<mtapp:setting
+  id="defaultgroups"
+  label="Default groups"
+  hint="Names of the groups authors will automatically become a member of upon creation/saving of an account (comma separated)."
+  show_hint="1">
+    <input type="text" name="defaultgroups" id="defaultgroups" 
+       value="<mt:var name="defaultgroups">" />
+</mtapp:setting>
+
+<mtapp:setting
+  id="logging"
+  label="Logging"
+  hint="Log actions to the activity log (can produce lots of messages)"
+  show_hint="1">
+    <input type="checkbox" name="logging" id="logging" 
+       value="1" <mt:if name="logging">checked="1"</mt:if> />
+</mtapp:setting>
