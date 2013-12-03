@@ -5,9 +5,9 @@ author_name: Maarten Schenk
 description: This plugin will assign an author to a group if certain custom fields are filled or add all new authors to a configurable group.
 plugin_link: http://www.movabletips.com/
 doc_link: http://www.movabletips.com/
-version: 1.0
+version: 1.1
 callbacks:
-	MT::Author::pre_save: $AssignGroup::AssignGroup::Plugin::author_post_save
+	MT::Author::post_save: $AssignGroup::AssignGroup::Plugin::author_post_save
     
 settings:
 	defaultgroups:
